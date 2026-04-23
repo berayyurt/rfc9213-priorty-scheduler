@@ -21,7 +21,7 @@ Bu proje, API Gateway’e gelen HTTP isteklerini RFC 9213 standardına göre ön
 
 * C dili
 * Min-Heap (Binary Heap)
-* Dinamik bellek yönetimi (malloc, realloc, free)
+* Dinamik bellek yönetimi (`malloc`, `realloc`, `free`)
 * RFC 9213 öncelik parse işlemi
 
 ---
@@ -30,13 +30,13 @@ Bu proje, API Gateway’e gelen HTTP isteklerini RFC 9213 standardına göre ön
 
 Sistem üç katmandan oluşur:
 
-1. Parser
+1. **Parser**
    HTTP header’dan öncelik değeri çıkarır
 
-2. Priority Queue
+2. **Priority Queue (Heap)**
    Min-Heap ile istekleri sıralar
 
-3. Main
+3. **Main**
    Sistemi çalıştırır ve test eder
 
 ---
@@ -81,7 +81,7 @@ gcc main.c heap.c parser.c -o scheduler
 
 ## Neden Min-Heap
 
-Min-Heap, en küçük öncelikli elemana sabit zamanda erişim sağlar ve ekleme/silme işlemlerini logaritmik zamanda gerçekleştirir. Bu nedenle gerçek zamanlı sistemler için uygundur.
+Min-Heap, en küçük öncelikli elemana sabit zamanda erişim sağlar ve ekleme/silme işlemlerini logaritmik zamanda gerçekleştirir. Array tabanlı yaklaşımlara göre daha verimlidir.
 
 ---
 
@@ -95,8 +95,6 @@ Min-Heap, en küçük öncelikli elemana sabit zamanda erişim sağlar ve ekleme
 ---
 
 ## Demo
-
-Sisteme farklı önceliklerde istekler eklenir ve öncelik sırasına göre işlenir.
 
 Örnek giriş:
 
